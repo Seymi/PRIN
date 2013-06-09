@@ -1,0 +1,48 @@
+<%= form_for([@customer, @test_object]) do |f| %>
+  <% if @test_object.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@test_object.errors.count, "error") %> prohibited this test_object from being saved:</h2>
+
+      <ul>
+      <% @test_object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_field :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :detail_desc %><br />
+    <%= f.text_field :detail_desc %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :punch %><br />
+    <%= f.check_box :punch %>
+  </div>
+  <div class="field">
+    <%= f.label :punch_year %><br />
+    <%= f.text_field :punch_year %>
+  </div>
+  <div class="field">
+    <%= f.label :photo_extension %><br />
+    <%= f.text_field :photo_extension %>
+  </div>
+
+  <div class="field">
+    <%= f.label :customer_id %><br />
+    <%= f.select :customer_id, Customer.all( :order => "last_name").collect {|c| [c.last_name, c.id] }  %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

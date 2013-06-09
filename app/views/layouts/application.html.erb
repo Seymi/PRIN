@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="cufon-active cufon-ready">
+<head>
+  <title>PRIN</title>
+  <%#= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "shortcodes.css", :media => "screen" %>
+  <%= stylesheet_link_tag    "style", :media => "screen" %>
+  <%= stylesheet_link_tag    "brushed_silver", :media => "screen" %>
+
+  <%#= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<!--body class="has_slider slider_nav_dots scrolling_slider is_home full_width has_intro" data-twttr-rendered="true" -->
+<!-- body class="full_width has_intro has_outro" data-twttr-rendered="true" -->
+
+<body>
+
+
+<div id="fb-root">
+</div>
+<div class="multibg">
+</div>
+
+
+<div id="body_inner">
+  <div id="header" style="margin-left: 40px;">
+    <h1>Prin Tracking</h1>
+  </div>
+
+
+  <div id="primary_menu">
+    <%#= menu_builder(@page_id) %>
+
+    <div class="jqueryslidemenu">
+    <ul id="menu-menu1" class="">
+      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a>home</a></li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/services">services</a></li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/customers">customers</a></li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/admin">admin</a></li>
+    </ul>
+    </div>
+
+  </div>
+
+  <div id="intro">
+  </div>
+
+  <div id="content">
+    <div id="content_inner">
+      <div id="main">
+        <div id="main_inner" class="entry" style="margin-left: 40px; margin-right: 40px;">
+
+          <%= yield %>
+
+          <% if flash[:notice] %>
+              <p id="notice">
+                <%= flash[:notice] %>
+              </p>
+          <% end %>
+          <% if flash[:alert] %>
+              <p id="alert">
+                <%= flash[:alert] %>
+              </p>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="outro">
+    <div id="outro_inner">
+    </div>
+  </div>
+
+
+
+  <div id="footer">&copy: 2012 PRIN GmbH. Unabhängig, Transparent, Genau
+    <% #if user_signed_in? %>
+        <%#=  link_to "logout", logout_path, method: :delete %>
+    <% #else %>
+        <%#=  link_to "login", login_path %>
+    <% #end %>
+  </div>
+</div>
+
+
+</body>
+</html>

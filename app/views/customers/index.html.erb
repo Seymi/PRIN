@@ -1,0 +1,53 @@
+<h1>Listing customers</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Sex</th>
+    <th>Title</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Street</th>
+    <th>Street number</th>
+    <th>Zip</th>
+    <th>City</th>
+    <th>Country</th>
+
+<!--
+    <th>Tel fixline</th>
+    <th>Tel mobile</th>
+    <th>Email</th>   -->
+    <th>Count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.company %></td>
+    <td><%= customer.sex %></td>
+    <td><%= customer.title %></td>
+    <td><%= customer.first_name %></td>
+    <td><%= customer.last_name %></td>
+    <td><%= customer.street %></td>
+    <td><%= customer.street_number %></td>
+    <td><%= customer.zip %></td>
+    <td><%= customer.city %></td>
+    <td><%= customer.country %></td>
+
+ <!--    <td><%#= customer.tel_fixline %></td>
+    <td><%#= customer.tel_mobile %></td>
+    <td><%#= customer.email %></td>    -->
+    <td><%= customer.test_objects.count %></td>
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Objects', customer_test_objects_path(customer) %></td>
+    <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customer', new_customer_path %>

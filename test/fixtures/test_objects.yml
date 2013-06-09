@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  desc: MyString
+  detail_desc: MyString
+  weight: 9.99
+  punch: false
+  punch_year: 
+  photo_extension: MyString
+
+two:
+  desc: MyString
+  detail_desc: MyString
+  weight: 9.99
+  punch: false
+  punch_year: 
+  photo_extension: MyString

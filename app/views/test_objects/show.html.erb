@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Desc:</b>
+  <%= @test_object.desc %>
+</p>
+
+<p>
+  <b>Detail desc:</b>
+  <%= @test_object.detail_desc %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @test_object.weight %>
+</p>
+
+<p>
+  <b>Punch:</b>
+  <%= @test_object.punch %>
+</p>
+
+<p>
+  <b>Punch year:</b>
+  <%= @test_object.punch_year %>
+</p>
+
+<p>
+  <b>Photo extension:</b>
+  <%= @test_object.photo_extension %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @test_object.customer.last_name %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_customer_test_object_path(@customer, @test_object) %> |
+<%= link_to 'Back', customer_test_objects_path(@customer) %>
